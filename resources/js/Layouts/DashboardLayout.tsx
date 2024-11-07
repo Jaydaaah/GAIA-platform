@@ -12,6 +12,12 @@ export default function DashboardLayout({
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
             <Sidebar header={header}>
+                <div className="p-3">
+                    <h1 className="text-xl">
+                        GAIA Platform
+                    </h1>
+                </div>
+                <br/>
                 {SidebarConfig.map(
                     ({ title, route_name, reactIcon }, index) => (
                         <NavLink

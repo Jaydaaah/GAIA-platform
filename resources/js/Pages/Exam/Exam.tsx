@@ -164,7 +164,7 @@ export default function Exam({ auth }: PageProps) {
     return (
         <Authenticated>
             <Head title="Exam" />
-            <div className="flex-grow flex flex-col items-center pt-12">
+            <div className="flex-grow flex flex-col items-center">
                 <div className="flex-grow w-full max-w-4xl space-y-6 sm:px-6 lg:px-8 flex flex-col-reverse">
                     <ChatInput
                         value={data.message}
@@ -174,7 +174,7 @@ export default function Exam({ auth }: PageProps) {
                             setData("message", target.value);
                         }}
                     />
-                    <div className="flex-grow flex flex-col-reverse gap-2 h-[75vh] overflow-x-hidden overflow-y-scroll px-5 scrollbar py-4">
+                    <div className="flex-grow flex flex-col-reverse gap-2 h-[80vh] overflow-x-hidden overflow-y-scroll px-5 scrollbar py-4">
                         {reverseData
                             .map(({ side, name, content, time }) => (
                                 <ChatBubble side={side} name={name} time={time}>
