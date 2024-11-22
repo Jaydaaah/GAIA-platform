@@ -45,4 +45,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function Chats()
+    {
+        return $this->hasMany(Chats::class);
+    }
+
+    public function APIs()
+    {
+        return $this->hasMany(ApiKeys::class);
+    }
 }

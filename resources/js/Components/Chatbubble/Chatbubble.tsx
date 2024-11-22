@@ -1,11 +1,37 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useMemo } from "react";
 
 export default function ChatBubble({
     children,
     name,
     side,
     time,
-}: PropsWithChildren<{ name: string; side: "left" | "right"; time: string }>) {
+    src,
+}: PropsWithChildren<{
+    name: string;
+    side: "left" | "right";
+    src: string;
+    time: Date;
+}>) {
+    const formattedTime = useMemo(() => {
+        return time.toLocaleTimeString();
+    }, [time]);
+
+    const renderChild = useMemo(() => {
+        if (typeof children == "string") {
+            return (
+                <p className="text-sm font-normal py-2.5 text-gray-900 dark:text-white">
+                    {children}
+                </p>
+            );
+        } else {
+            return (
+                <div className="text-sm font-normal py-2.5 text-gray-900 dark:text-white">
+                    {children}
+                </div>
+            );
+        }
+    }, [children]);
+
     return (
         <div
             className={`flex items-start ${side == "left" && "self-start"} ${
@@ -13,8 +39,8 @@ export default function ChatBubble({
             } gap-2.5 `}
         >
             <img
-                className="w-8 h-8 rounded-full"
-                src="/docs/images/people/profile-picture-3.jpg"
+                className="w-10 h-10 rounded-full antialiased"
+                src={src}
                 alt="Jese image"
             />
             <div
@@ -27,12 +53,10 @@ export default function ChatBubble({
                         {name}
                     </span>
                     <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
-                        {time}
+                        {formattedTime}
                     </span>
                 </div>
-                <p className="text-sm font-normal py-2.5 text-gray-900 dark:text-white">
-                    {children}
-                </p>
+                {renderChild}
             </div>
         </div>
     );

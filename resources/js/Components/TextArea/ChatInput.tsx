@@ -1,4 +1,12 @@
-import { PropsWithChildren, useEffect, useMemo, useRef, useState } from "react";
+import {
+    KeyboardEvent,
+    PropsWithChildren,
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from "react";
 import Spinner, { SpinnerSize } from "../Spinner/Spinner";
 import { motion, useAnimationControls } from "framer-motion";
 
@@ -16,6 +24,7 @@ export default function ChatInput({
     onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;
     onSubmit?: React.FormEventHandler<HTMLFormElement>;
 }>) {
+    const formRef = useRef<HTMLFormElement>(null);
     const inputRef = useRef<HTMLTextAreaElement>(null);
     const [textHasFocus, setHasFocus] = useState(false);
     const divMotion = useAnimationControls();
@@ -31,10 +40,21 @@ export default function ChatInput({
     useEffect(() => {
         if (inputRef.current) {
             inputRef.current.style.height = "inherit";
-            const scrollHeight = inputRef.current?.scrollHeight
+            const scrollHeight = inputRef.current?.scrollHeight;
             inputRef.current.style.height = `${Math.min(scrollHeight, 540)}px`;
         }
     }, [value]);
+
+    const keyPressHandler = useCallback(
+        (event: KeyboardEvent<HTMLTextAreaElement>) => {
+            const {shiftKey, key} = event;
+            if (!shiftKey && key == "Enter") {
+                formRef.current?.requestSubmit();
+                event.preventDefault();
+            }
+        },
+        []
+    );
 
     return (
         <div className="overflow-hidden">
@@ -54,6 +74,7 @@ export default function ChatInput({
                         ease: "anticipate",
                         duration: 1,
                     }}
+                    ref={formRef}
                     className={className}
                     onSubmit={onSubmit}
                 >
@@ -65,9 +86,11 @@ export default function ChatInput({
                             id="chat"
                             ref={inputRef}
                             rows={1}
+                            maxLength={1000}
                             className="overflow-hidden block mr-3 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Your message..."
                             onChange={onChange}
+                            onKeyDown={keyPressHandler}
                             onFocus={() => setHasFocus(true)}
                             onBlur={() => setHasFocus(false)}
                             value={value}

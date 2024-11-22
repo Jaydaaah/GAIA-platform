@@ -144,7 +144,7 @@ export default function Welcome({
                         <footer className="py-16 text-center text-sm text-black dark:text-white/70">
                             <div className="container mx-auto px-6 text-center">
                                 <p>
-                                    &copy; 2023 GAIA Platform. All rights
+                                    &copy; 2024 GAIA Platform. All rights
                                     reserved.
                                 </p>
                                 <div className="flex justify-center space-x-4 mt-4">

@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get("/exam", [ExamController::class, 'index'])->name('exam');
+    Route::post("/exam", [ExamController::class, 'submit'])->name('exam.edit');
+    Route::post("/exam/sync", [ExamController::class, 'syncAIResponse'])->name('exam.ai.sync');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
