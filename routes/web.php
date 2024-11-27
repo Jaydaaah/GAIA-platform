@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::get('/docs', function () {
     return Inertia::render('DocsPage');
-});
+})->name('docs');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

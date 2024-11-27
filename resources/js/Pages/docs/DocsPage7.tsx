@@ -47,11 +47,11 @@ export default function DocsPage7() {
     };
 
     return (
-        <div className="relative bg-white px-8 pt-12 pb-15 sm:mx-auto sm:max-w-6xl sm:px-12">
-            <h1 className="text-5xl font-bold text-center mb-8 text-yellow-600">
+        <div className="relative px-8 pt-12 pb-15 sm:mx-auto sm:max-w-6xl sm:px-12">
+            <h1 className="text-5xl font-bold text-center mb-8 text-primary">
                 Scope of the Project
             </h1>
-            <p className="text-xl text-gray-700 mb-6">
+            <p className="text-xl text-gray-300 mb-6">
                 This project aims to develop a web-based platform using Laravel
                 to support AI-driven conversational assessments, helping
                 students manage exam anxiety and improve academic performance.
@@ -63,14 +63,14 @@ export default function DocsPage7() {
                 {features.map((feature, index) => (
                     <div
                         key={index}
-                        className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center"
+                        className="bg-neutral rounded-lg shadow-lg p-6 flex flex-col items-center text-center"
                     >
                         <img
                             src={feature.image}
                             alt={feature.title}
                             className="mb-4 object-cover rounded-sm"
                         />
-                        <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+                        <h3 className="text-2xl font-semibold text-secondary/80 mb-2">
                             {feature.title}
                         </h3>
                         {/* Toggle the description visibility */}
@@ -87,7 +87,7 @@ export default function DocsPage7() {
                                         exit={{
                                             height: 0,
                                         }}
-                                        className="text-xl text-gray-700 mb-4"
+                                        className="text-xl text-gray-300 mb-4"
                                     >
                                         {feature.description}
                                     </motion.p>
@@ -96,7 +96,7 @@ export default function DocsPage7() {
                         </AnimatePresence>
                         <button
                             onClick={() => toggleDescription(index)}
-                            className="text-yellow-600 font-bold hover:text-yellow-700 transition-all"
+                            className="text-primary font-bold hover:text-secondary transition-all"
                         >
                             {visibleDescription[index]
                                 ? "Show Less"
@@ -107,7 +107,7 @@ export default function DocsPage7() {
             </div>
 
             <footer className="mt-12 text-center">
-                <p className="text-lg text-gray-500">
+                <p className="text-lg text-secondary">
                     The scope defines the primary features of the GAIA platform,
                     focusing on enhancing student performance while providing
                     educators with the necessary tools to monitor and support

@@ -1,27 +1,27 @@
 export default function DocsPage19() {
     return (
-        <div className="relative bg-white px-8 pt-12 pb-15 sm:mx-auto sm:max-w-6xl sm:px-12 mx-4">
-            <h1 className="text-5xl font-bold text-center mb-8 text-yellow-600">
+        <div className="relative px-8 pt-12 pb-15 sm:mx-auto sm:max-w-6xl sm:px-12 mx-4">
+            <h1 className="text-5xl font-bold text-center mb-8 text-primary">
                 Evaluation Phase: Post-Exam Rating System
             </h1>
-            <p className="text-xl text-gray-700 mb-6">
+            <p className="text-xl text-gray-300 mb-6">
                 <strong>Objective:</strong> Provide students with immediate
                 ratings based on their exam performance through interactive
                 conversation.
             </p>
-            <p className="text-xl text-gray-700 mb-6">
+            <p className="text-xl text-gray-300 mb-6">
                 <strong>Trigger:</strong> A pop-up window appears after students
                 complete their conversational exams.
             </p>
-            <p className="text-xl text-gray-700 mb-6">
+            <p className="text-xl text-gray-300 mb-6">
                 <strong>Format:</strong> A chatbot engages students in a
                 friendly manner, guiding them through the rating process.
             </p>
 
-            <h2 className="text-4xl font-semibold mb-6 text-yellow-600">
+            <h2 className="text-4xl font-semibold mb-6 text-primary">
                 Conversation Structure:
             </h2>
-            <ol className="list-decimal list-inside text-xl text-gray-700 mb-6 space-y-4">
+            <ol className="list-decimal list-inside text-xl text-gray-300 mb-6 space-y-4">
                 <li>
                     <strong>Greeting and Acknowledgment:</strong> The chatbot
                     thanks the student for completing the exam and expresses
@@ -34,7 +34,7 @@ export default function DocsPage19() {
                 </li>
                 <li>
                     <strong>Follow-Up Questions:</strong>
-                    <ul className="list-disc list-inside text-xl text-gray-700 space-y-2">
+                    <ul className="list-disc list-inside text-xl text-gray-300 space-y-2">
                         <li>
                             <strong>1-2:</strong> "I'm sorry to hear that!"
                         </li>

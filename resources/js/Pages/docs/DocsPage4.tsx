@@ -1,10 +1,10 @@
 export default function DocsPage4() {
     return (
-        <div className="relative bg-white px-8 pt-12 pb-15 sm:mx-auto sm:max-w-6xl sm:px-12">
-            <h1 className="text-5xl font-bold text-center mb-8 text-yellow-600">
+        <div className="relative px-8 pt-12 pb-15 sm:mx-auto sm:max-w-6xl sm:px-12">
+            <h1 className="text-5xl font-bold text-center mb-8 text-primary">
                 Proposed Research Project
             </h1>
-            <p className="text-xl text-gray-700 mb-6">
+            <p className="text-xl text-gray-300 mb-6">
                 The GAIA platform reduces exam anxiety by providing
                 personalized, interactive learning through conversational and
                 generative AI. Students engage in low-stakes, AI-driven
@@ -19,7 +19,7 @@ export default function DocsPage4() {
                 confidence and enhance academic performance.
             </p>
             <footer className="mt-12 text-center">
-                <p className="text-lg text-gray-500">
+                <p className="text-lg text-secondary">
                     This platform aims to transform traditional assessment
                     methods and support students’ academic journey through
                     innovative AI-driven solutions.

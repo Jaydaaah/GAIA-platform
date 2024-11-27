@@ -1,15 +1,15 @@
 export default function CalendarAct() {
     return (
-        <div className="bg-orange-100 p-8">
+        <div className=" p-8 flex flex-col items-center">
             <div className="text-center mb-8">
-                <h1 className="text-5xl font-semibold text-gray-700">
-                    GAIA Platform Project Gantt Chart
+                <h1 className="text-5xl font-semibold text-gray-300">
+                    Gantt Chart
                 </h1>
             </div>
 
-            <div className="overflow-x-auto bg-white p-6 rounded-xl shadow-lg">
-                <table className="min-w-full table-auto text-center border-collapse">
-                    <thead className="bg-yellow-500 text-white">
+            <div className="overflow-x-auto bg-neutral p-6 rounded-xl shadow-lg w-full">
+                <table className="min-w-full table-auto text-center border-neutral border-collapse max-w-7xl">
+                    <thead className="bg-background/50 text-white">
                         <tr>
                             <th className="px-4 py-2">Process</th>
                             <th className="px-4 py-2">AUGUST</th>

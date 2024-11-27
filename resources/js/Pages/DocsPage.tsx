@@ -23,40 +23,47 @@ import CalendarAct from "./docs/CalendarAct";
 import SystemRequirement from "./docs/SystemRequirement";
 import { useMemo } from "react";
 import { motion } from "framer-motion";
+import Entrance from "./docs/Entrance";
 
 export default function DocsPage({}: PageProps) {
     const renderSlides = useMemo(() => {
-        return slides.map((slide, i) => (
-            <motion.div
-                key={`slide-${i}`}
-                initial={{
-                    opacity: 0.5,
-                    x: -200,
-                }}
-                whileInView={{
-                    opacity: 1,
-                    x: 0,
-                }}
-                viewport={{
-                    once: true,
-                }}
-                transition={{
-                    duration: 0.8,
-                }}
-                className="w-screen h-screen flex flex-col justify-center overflow-y-scroll no-scrollbar"
-            >
-                {slide}
-            </motion.div>
-        ));
+        return slides.map((slide, i) => {
+            if (i == 0) {
+                return slide;
+            }
+            return (
+                <motion.div
+                    key={`slide-${i}`}
+                    initial={{
+                        opacity: 0.5,
+                        x: -200,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        x: 0,
+                    }}
+                    viewport={{
+                        once: true,
+                    }}
+                    transition={{
+                        duration: 0.8,
+                    }}
+                    className="w-screen h-screen flex flex-col justify-center overflow-y-scroll no-scrollbar"
+                >
+                    {slide}
+                </motion.div>
+            );
+        });
     }, []);
 
     return (
-        <div className="flex flex-col divide-y-2 divide-opacity-50 gap-20 overflow-hidden">
+        <div className="flex flex-col divide-y-2 divide-opacity-10 divide-neutral/50 gap-20 overflow-hidden bg-background text-white">
             {renderSlides}
         </div>
     );
 }
 const slides = [
+    <Entrance />,
     <DocsPage1 />,
     <DocsPage2 />,
     <DocsPage3 />,

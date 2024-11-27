@@ -21,7 +21,7 @@ export default function Welcome({
     return (
         <>
             <Head title="Welcome" />
-            <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+            <div className="bg-gray-50 text-black/50 dark:bg-background dark:text-primary">
                 <div className="relative flex min-h-screen flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
                     <div className="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                         <header className="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
@@ -54,7 +54,7 @@ export default function Welcome({
                         </header>
 
                         <main className="mt-6">
-                            <section className="bg-white p-4 shadow sm:rounded-lg sm:p-8 dark:bg-gray-800 text-white py-20">
+                            <section className="bg-white p-4 shadow sm:rounded-lg sm:p-8 dark:bg-neutral/10 dark:border-neutral border-[2px] shadow-neutral text-primary py-20">
                                 <div className="container mx-auto px-6 text-center">
                                     <div className="flex lg:col-start-2 lg:justify-center">
                                         <GAIALogo className="w-52 h-52" />
@@ -66,8 +66,16 @@ export default function Welcome({
                                         Platform
                                     </h2>
                                     <p className="text-lg mb-8">
-                                        A platform for sustainable solutions and
-                                        innovation.
+                                        A Generative Artificial Intelligence
+                                        platform designed to foster engaging
+                                        academic discussions, enhance
+                                        collaborative learning, and drive
+                                        meaningful innovation across various
+                                        fields. By leveraging cutting-edge AI
+                                        technologies, GAIA creates an
+                                        interactive and dynamic learning
+                                        environment that encourages critical
+                                        thinking and knowledge sharing.
                                     </p>
                                     {/* <a
                                         href="#contact"
@@ -76,7 +84,7 @@ export default function Welcome({
                                         Get Started
                                     </a> */}
                                     <div>
-                                        {auth.user ? (
+                                        {/* {auth.user ? (
                                             <Link
                                                 href={route("dashboard")}
                                                 className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700 transition duration-300"
@@ -98,42 +106,59 @@ export default function Welcome({
                                                     Register
                                                 </Link>
                                             </>
-                                        )}
+                                        )} */}
+                                        <Link
+                                            href={route("docs")}
+                                            className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-neutral/50 dark:text-secondary dark:hover:bg-neutral/40     transition duration-300"
+                                        >
+                                            View Research Docs
+                                        </Link>
                                     </div>
                                 </div>
                             </section>
 
                             <section id="features" className="py-20">
                                 <div className="container mx-auto px-6">
-                                    <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-gray-200">
+                                    <h2 className="text-3xl font-bold text-center mb-12 text-secondary">
                                         Our Features
                                     </h2>
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                                            <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
-                                                Feature One
+                                        <div className="bg-white p-4 shadow sm:rounded-lg sm:p-8 dark:bg-neutral/10 dark:border-neutral border-[2px] shadow-neutral text-primary">
+                                            <h3 className="text-xl font-semibold mb-4 text-secondary ">
+                                                Admin Dashboard
                                             </h3>
-                                            <p className="text-gray-700 dark:text-gray-300">
-                                                Description of feature one and
-                                                its benefits.
+                                            <p className="text-primary ">
+                                                A user-friendly interface for
+                                                administrators to manage,
+                                                monitor, and configure platform
+                                                settings, track user activity,
+                                                and view real-time analytics.
                                             </p>
                                         </div>
-                                        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                                            <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
-                                                Feature Two
+                                        <div className="bg-white p-4 shadow sm:rounded-lg sm:p-8 dark:bg-neutral/10 dark:border-neutral border-[2px] shadow-neutral text-primary">
+                                            <h3 className="text-xl font-semibold mb-4 text-secondary ">
+                                                AI Integrations
                                             </h3>
-                                            <p className="text-gray-700 dark:text-gray-300">
-                                                Description of feature two and
-                                                its benefits.
+                                            <p className="text-primary ">
+                                                Seamless integration with Groq,
+                                                OpenAI, Anthropy, and Gemini,
+                                                enhancing the platform with
+                                                advanced AI capabilities for
+                                                automation, personalization, and
+                                                analytics..
                                             </p>
                                         </div>
-                                        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                                            <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
-                                                Feature Three
+                                        <div className="bg-white p-4 shadow sm:rounded-lg sm:p-8 dark:bg-neutral/10 dark:border-neutral border-[2px] shadow-neutral text-primary">
+                                            <h3 className="text-xl font-semibold mb-4 text-secondary">
+                                                E-Learning Platform
                                             </h3>
-                                            <p className="text-gray-700 dark:text-gray-300">
-                                                Description of feature three and
-                                                its benefits.
+                                            <p className="text-primary">
+                                                An intuitive platform powered by
+                                                your own API, allowing seamless
+                                                creation and delivery of
+                                                educational content, including
+                                                interactive lessons, quizzes,
+                                                and progress tracking.
                                             </p>
                                         </div>
                                     </div>

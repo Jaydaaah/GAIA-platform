@@ -53,8 +53,8 @@ export default function DocsPage8() {
     };
 
     return (
-        <div className="relative bg-white px-8 pt-12 pb-15 sm:mx-auto sm:max-w-6xl sm:px-12">
-            <h1 className="text-5xl font-bold text-center mb-8 text-yellow-600">
+        <div className="relative px-8 pt-12 pb-15 sm:mx-auto sm:max-w-6xl sm:px-12">
+            <h1 className="text-5xl font-bold text-center mb-8 text-primary">
                 Limitations
             </h1>
 
@@ -62,14 +62,14 @@ export default function DocsPage8() {
                 {limitations.map((limitation, index) => (
                     <div
                         key={index}
-                        className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center"
+                        className="bg-neutral rounded-lg shadow-lg p-6 flex flex-col items-center text-center"
                     >
                         <img
                             src={limitation.image}
                             alt={limitation.title}
                             className="-4 object-cover rounded-lg"
                         />
-                        <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+                        <h3 className="text-2xl font-semibold text-neutral mb-2">
                             {limitation.title}
                         </h3>
                         {/* Toggle the description visibility */}
@@ -86,7 +86,7 @@ export default function DocsPage8() {
                                         exit={{
                                             height: 0,
                                         }}
-                                        className="text-xl text-gray-700 mb-4"
+                                        className="text-xl text-gray-300 mb-4"
                                     >
                                         {limitation.description}
                                     </motion.p>
@@ -95,7 +95,7 @@ export default function DocsPage8() {
                         </AnimatePresence>
                         <button
                             onClick={() => toggleDescription(index)}
-                            className="text-yellow-600 font-bold hover:text-yellow-700 transition-all"
+                            className="text-primary font-bold hover:text-yellow-700 transition-all"
                         >
                             {visibleDescription[index]
                                 ? "Show Less"
@@ -106,7 +106,7 @@ export default function DocsPage8() {
             </div>
 
             <footer className="mt-12 text-center">
-                <p className="text-lg text-gray-500">
+                <p className="text-lg text-secondary">
                     While GAIA offers numerous benefits, it is important to
                     address its limitations, particularly in areas such as AI
                     capabilities, accessibility, and ethical considerations.
