@@ -43,7 +43,7 @@ export default function DocsPage({}: PageProps) {
                 transition={{
                     duration: 0.8,
                 }}
-                className="w-screen h-screen flex flex-col justify-center overflow-y-scroll"
+                className="w-screen h-screen flex flex-col justify-center overflow-y-scroll no-scrollbar"
             >
                 {slide}
             </motion.div>
