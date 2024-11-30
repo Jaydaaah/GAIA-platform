@@ -21,49 +21,65 @@ import DocsPage19 from "./docs/DocsPage19";
 import DocsPage20 from "./docs/DocsPage20";
 import CalendarAct from "./docs/CalendarAct";
 import SystemRequirement from "./docs/SystemRequirement";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Entrance from "./docs/Entrance";
+import { Head } from "@inertiajs/react";
+import DocsPageSlide from "./docs/partial/DocsPageSlide";
+import MembersPage from "./docs/MembersPage";
 
 export default function DocsPage({}: PageProps) {
-    const renderSlides = useMemo(() => {
-        return slides.map((slide, i) => {
-            if (i == 0) {
-                return slide;
-            }
-            return (
-                <motion.div
-                    key={`slide-${i}`}
-                    initial={{
-                        opacity: 0.5,
-                        x: -200,
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                        x: 0,
-                    }}
-                    viewport={{
-                        once: true,
-                    }}
-                    transition={{
-                        duration: 0.8,
-                    }}
-                    className="w-screen h-screen flex flex-col justify-center overflow-y-scroll no-scrollbar"
-                >
-                    {slide}
-                </motion.div>
-            );
-        });
+    const [autoSnap, setAutoSnap] = useState(false);
+    const [initialized, setInitialize] = useState(false);
+
+    useEffect(() => {
+        const localAutuSnapState = localStorage.getItem("auto-snap") == "true";
+        setAutoSnap(localAutuSnapState);
+        setInitialize(true);
     }, []);
 
+    useEffect(() => {
+        if (initialized) {
+            localStorage.setItem("auto-snap", autoSnap ? "true" : "false");
+        }
+    }, [autoSnap, initialized]);
+
+    const renderSlides = useMemo(() => {
+        return slides.map((slide, i) => {
+            const key = `docs-slide-${i}`;
+            if (i == 0) {
+                return <div key={key}>{slide}</div>;
+            }
+            return (
+                <DocsPageSlide
+                    key={key}
+                    autoSnap={autoSnap}
+                    setAutoSnap={setAutoSnap}
+                >
+                    {slide}
+                </DocsPageSlide>
+            );
+        });
+    }, [autoSnap]);
+
     return (
-        <div className="flex flex-col divide-y-2 divide-opacity-10 divide-neutral/50 gap-20 overflow-hidden bg-background text-white">
-            {renderSlides}
-        </div>
+        <>
+            <Head title="Research Docs" />
+            <div
+                className="flex flex-col divide-y-2 divide-opacity-10 divide-neutral/50 gap-20 overflow-hidden bg-background text-white"
+                style={{
+                    scrollBehavior: "smooth",
+                }}
+            >
+                {renderSlides}
+            </div>
+        </>
     );
 }
+
 const slides = [
     <Entrance />,
+    <MembersPage />,
     <DocsPage1 />,
     <DocsPage2 />,
     <DocsPage3 />,

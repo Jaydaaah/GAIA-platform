@@ -1,40 +1,9 @@
+import Card from "@/Components/Card/Card";
+import PopupEffectDiv from "@/Components/Effects/PopupEffectDiv";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 export default function DocsPage7() {
-    const features = [
-        {
-            title: "Chat-like Interface",
-            description:
-                "A chat-like interface for students to interact with the AI for academic assessment.",
-            image: "", // Replace with actual image URLs
-        },
-        {
-            title: "Educator Dashboard",
-            description:
-                "An educator dashboard that allows educators to review AI-generated assessments, monitor student performance, and provide feedback.",
-            image: "",
-        },
-        {
-            title: "Real-time Communication",
-            description:
-                "Real-time communication between the AI and students, utilizing WebSockets or a similar real-time technology.",
-            image: "",
-        },
-        {
-            title: "Advanced NLP Models",
-            description:
-                "Integration of advanced NLP models like GPT-4o-mini, Claude Haikyu, or Gemini Flash 1.5 to handle conversations and generate assessments.",
-            image: "",
-        },
-        {
-            title: "Student Data Collection",
-            description:
-                "The collection of student interaction data for performance tracking and AI evaluation.",
-            image: "",
-        },
-    ];
-
     // State to manage visibility of the descriptions for each feature
     const [visibleDescription, setVisibleDescription] = useState(
         Array(features.length).fill(false)
@@ -61,48 +30,42 @@ export default function DocsPage7() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {features.map((feature, index) => (
-                    <div
-                        key={index}
-                        className="bg-neutral rounded-lg shadow-lg p-6 flex flex-col items-center text-center"
-                    >
-                        <img
-                            src={feature.image}
-                            alt={feature.title}
-                            className="mb-4 object-cover rounded-sm"
-                        />
-                        <h3 className="text-2xl font-semibold text-secondary/80 mb-2">
-                            {feature.title}
-                        </h3>
-                        {/* Toggle the description visibility */}
-                        <AnimatePresence>
-                            {visibleDescription[index] && (
-                                <div className="overflow-hidden">
-                                    <motion.p
-                                        initial={{
-                                            height: 0,
-                                        }}
-                                        animate={{
-                                            height: 100,
-                                        }}
-                                        exit={{
-                                            height: 0,
-                                        }}
-                                        className="text-xl text-gray-300 mb-4"
-                                    >
-                                        {feature.description}
-                                    </motion.p>
-                                </div>
-                            )}
-                        </AnimatePresence>
-                        <button
-                            onClick={() => toggleDescription(index)}
-                            className="text-primary font-bold hover:text-secondary transition-all"
-                        >
-                            {visibleDescription[index]
-                                ? "Show Less"
-                                : "Learn More"}
-                        </button>
-                    </div>
+                    <PopupEffectDiv key={`feature-card-${index}`}>
+                        <Card className="flex flex-col items-center text-center">
+                            <h3 className="text-2xl font-semibold text-secondary/80 mb-2">
+                                {feature.title}
+                            </h3>
+                            {/* Toggle the description visibility */}
+                            <AnimatePresence>
+                                {visibleDescription[index] && (
+                                    <div className="overflow-hidden">
+                                        <motion.p
+                                            initial={{
+                                                height: 0,
+                                            }}
+                                            animate={{
+                                                height: 100,
+                                            }}
+                                            exit={{
+                                                height: 0,
+                                            }}
+                                            className="text-xl text-gray-300 mb-4"
+                                        >
+                                            {feature.description}
+                                        </motion.p>
+                                    </div>
+                                )}
+                            </AnimatePresence>
+                            <button
+                                onClick={() => toggleDescription(index)}
+                                className="text-primary font-bold hover:text-secondary transition-all"
+                            >
+                                {visibleDescription[index]
+                                    ? "Show Less"
+                                    : "Learn More"}
+                            </button>
+                        </Card>
+                    </PopupEffectDiv>
                 ))}
             </div>
 
@@ -117,3 +80,36 @@ export default function DocsPage7() {
         </div>
     );
 }
+
+const features = [
+    {
+        title: "Chat-like Interface",
+        description:
+            "A chat-like interface for students to interact with the AI for academic assessment.",
+        image: "", // Replace with actual image URLs
+    },
+    {
+        title: "Educator Dashboard",
+        description:
+            "An educator dashboard that allows educators to review AI-generated assessments, monitor student performance, and provide feedback.",
+        image: "",
+    },
+    {
+        title: "Real-time Communication",
+        description:
+            "Real-time communication between the AI and students, utilizing WebSockets or a similar real-time technology.",
+        image: "",
+    },
+    {
+        title: "Advanced NLP Models",
+        description:
+            "Integration of advanced NLP models like GPT-4o-mini, Claude Haikyu, or Gemini Flash 1.5 to handle conversations and generate assessments.",
+        image: "",
+    },
+    {
+        title: "Student Data Collection",
+        description:
+            "The collection of student interaction data for performance tracking and AI evaluation.",
+        image: "",
+    },
+];

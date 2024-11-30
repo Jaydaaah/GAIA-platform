@@ -1,6 +1,8 @@
+import Card from "@/Components/Card/Card";
 import GAIALogo from "@/Components/GAIALogo";
 import { PageProps } from "@/types";
 import { Head, Link } from "@inertiajs/react";
+import { motion } from "framer-motion";
 
 export default function Welcome({
     auth,
@@ -54,37 +56,38 @@ export default function Welcome({
                         </header>
 
                         <main className="mt-6">
-                            <section className="bg-white p-4 shadow sm:rounded-lg sm:p-8 dark:bg-neutral/10 dark:border-neutral border-[2px] shadow-neutral text-primary py-20">
-                                <div className="container mx-auto px-6 text-center">
-                                    <div className="flex lg:col-start-2 lg:justify-center">
-                                        <GAIALogo className="w-52 h-52" />
-                                    </div>
-                                    <h1 className="text-5xl font-bold mb-4">
-                                        Welcome to GAIA
-                                    </h1>
-                                    <h2 className="text-3xl font-light mb-4">
-                                        Platform
-                                    </h2>
-                                    <p className="text-lg mb-8">
-                                        A Generative Artificial Intelligence
-                                        platform designed to foster engaging
-                                        academic discussions, enhance
-                                        collaborative learning, and drive
-                                        meaningful innovation across various
-                                        fields. By leveraging cutting-edge AI
-                                        technologies, GAIA creates an
-                                        interactive and dynamic learning
-                                        environment that encourages critical
-                                        thinking and knowledge sharing.
-                                    </p>
-                                    {/* <a
+                            <section>
+                                <Card>
+                                    <div className="container mx-auto px-6 text-center">
+                                        <div className="flex lg:col-start-2 lg:justify-center">
+                                            <GAIALogo className="w-52 h-52" />
+                                        </div>
+                                        <h1 className="text-5xl font-bold mb-4">
+                                            Welcome to GAIA
+                                        </h1>
+                                        <h2 className="text-3xl font-light mb-4">
+                                            Platform
+                                        </h2>
+                                        <p className="text-lg mb-8">
+                                            A Generative Artificial Intelligence
+                                            platform designed to foster engaging
+                                            academic discussions, enhance
+                                            collaborative learning, and drive
+                                            meaningful innovation across various
+                                            fields. By leveraging cutting-edge
+                                            AI technologies, GAIA creates an
+                                            interactive and dynamic learning
+                                            environment that encourages critical
+                                            thinking and knowledge sharing.
+                                        </p>
+                                        {/* <a
                                         href="#contact"
                                         className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700 transition duration-300"
                                     >
                                         Get Started
                                     </a> */}
-                                    <div>
-                                        {/* {auth.user ? (
+                                        <div>
+                                            {/* {auth.user ? (
                                             <Link
                                                 href={route("dashboard")}
                                                 className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700 transition duration-300"
@@ -107,14 +110,15 @@ export default function Welcome({
                                                 </Link>
                                             </>
                                         )} */}
-                                        <Link
-                                            href={route("docs")}
-                                            className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-neutral/50 dark:text-secondary dark:hover:bg-neutral/40     transition duration-300"
-                                        >
-                                            View Research Docs
-                                        </Link>
+                                            <Link
+                                                href={route("docs")}
+                                                className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-neutral/50 dark:text-secondary dark:hover:bg-neutral/40     transition duration-300"
+                                            >
+                                                View Research Docs
+                                            </Link>
+                                        </div>
                                     </div>
-                                </div>
+                                </Card>
                             </section>
 
                             <section id="features" className="py-20">
@@ -123,44 +127,32 @@ export default function Welcome({
                                         Our Features
                                     </h2>
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                        <div className="bg-white p-4 shadow sm:rounded-lg sm:p-8 dark:bg-neutral/10 dark:border-neutral border-[2px] shadow-neutral text-primary">
-                                            <h3 className="text-xl font-semibold mb-4 text-secondary ">
-                                                Admin Dashboard
-                                            </h3>
-                                            <p className="text-primary ">
-                                                A user-friendly interface for
-                                                administrators to manage,
-                                                monitor, and configure platform
-                                                settings, track user activity,
-                                                and view real-time analytics.
-                                            </p>
-                                        </div>
-                                        <div className="bg-white p-4 shadow sm:rounded-lg sm:p-8 dark:bg-neutral/10 dark:border-neutral border-[2px] shadow-neutral text-primary">
-                                            <h3 className="text-xl font-semibold mb-4 text-secondary ">
-                                                AI Integrations
-                                            </h3>
-                                            <p className="text-primary ">
-                                                Seamless integration with Groq,
-                                                OpenAI, Anthropy, and Gemini,
-                                                enhancing the platform with
-                                                advanced AI capabilities for
-                                                automation, personalization, and
-                                                analytics..
-                                            </p>
-                                        </div>
-                                        <div className="bg-white p-4 shadow sm:rounded-lg sm:p-8 dark:bg-neutral/10 dark:border-neutral border-[2px] shadow-neutral text-primary">
-                                            <h3 className="text-xl font-semibold mb-4 text-secondary">
-                                                E-Learning Platform
-                                            </h3>
-                                            <p className="text-primary">
-                                                An intuitive platform powered by
-                                                your own API, allowing seamless
-                                                creation and delivery of
-                                                educational content, including
-                                                interactive lessons, quizzes,
-                                                and progress tracking.
-                                            </p>
-                                        </div>
+                                        {features.map(
+                                            ({ title, description }) => (
+                                                <motion.div
+                                                    initial={{
+                                                        scale: 1,
+                                                    }}
+                                                    whileHover={{
+                                                        scale: 1.08
+                                                    }}
+                                                    transition={{
+                                                        duration: 1,
+                                                        delay: 0.3,
+                                                        ease: "anticipate"
+                                                    }}
+                                                >
+                                                    <Card className="h-full">
+                                                        <h3 className="text-xl font-semibold mb-4 text-secondary ">
+                                                            {title}
+                                                        </h3>
+                                                        <p className="text-primary ">
+                                                            {description}
+                                                        </p>
+                                                    </Card>
+                                                </motion.div>
+                                            )
+                                        )}
                                     </div>
                                 </div>
                             </section>
@@ -196,3 +188,21 @@ export default function Welcome({
         </>
     );
 }
+
+const features = [
+    {
+        title: "Admin Dashboard",
+        description:
+            "A user-friendly interface for administrators to manage, monitor, and configure platform settings, track user activity, and view real-time analytics.",
+    },
+    {
+        title: "AI Integrations",
+        description:
+            "Seamless integration with Groq,OpenAI, Anthropy, and Gemini, enhancing the platform with advanced AI capabilities for automation, personalization, and analytics..",
+    },
+    {
+        title: "E-Learning Platform",
+        description:
+            "An intuitive platform powered by your own API, allowing seamless creation and delivery of educational content, including interactive lessons, quizzes, and progress tracking.",
+    },
+];

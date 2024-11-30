@@ -9,10 +9,5 @@ export default defineConfig({
             refresh: true,
         }),
         react(),
-    ],
-    server: {
-        host: '192.168.100.125',
-        port: 5173,
-        strictPort: true
-    }
+    ]
 });

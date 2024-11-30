@@ -5,62 +5,11 @@ export default function DocsPage6() {
                 Specific Objectives
             </h1>
             <ul className="list-disc list-inside text-xl text-gray-300 mb-6">
-                <li className="mb-2">
-                    <strong>
-                        To create assessment modules that allow students to
-                        engage in dynamic dialogues with the AI, where they can
-                        explore questions, receive supportive hints, and delve
-                        deeper into concepts, thereby transforming assessments
-                        into a collaborative and less intimidating experience.
-                    </strong>
-                </li>
-                <li className="mb-2">
-                    <strong>
-                        To create low-stakes assessments that simulate real exam
-                        conditions but are designed to be supportive and
-                        informative, allowing students to build confidence
-                        without the pressure of grading.
-                    </strong>
-                </li>
-                <li className="mb-2">
-                    <strong>
-                        To design dashboards that summarize student performance
-                        data, highlighting trends and areas for improvement,
-                        thus allowing educators to make informed decisions
-                        without sifting through individual submissions.
-                    </strong>
-                </li>
-                <li className="mb-2">
-                    <strong>
-                        To use LLMs to generate tailored feedback reports that
-                        summarize a student’s strengths and weaknesses, offering
-                        targeted resources for improvement specific to their
-                        work.
-                    </strong>
-                </li>
-                <li className="mb-2">
-                    <strong>
-                        To create comprehensive guidelines that outline best
-                        practices for educators to incorporate GAIA into their
-                        lesson plans and assessment strategies.
-                    </strong>
-                </li>
-                <li className="mb-2">
-                    <strong>
-                        To provide prompts that encourage students to express
-                        their thoughts, such as “What are your views on [topic]
-                        and why?” This invites more personal engagement.
-                    </strong>
-                </li>
-                <li className="mb-2">
-                    <strong>
-                        To provide positive feedback on students' efforts, like
-                        GAIA complementing the students' answers on the exam, it
-                        reinforces the belief that hard work leads to success.
-                        This motivation encourages them to take on new
-                        challenges, as they feel more capable and supported.
-                    </strong>
-                </li>
+                {paragraphs.map((p, i) => (
+                    <li key={`general-p-${i}`} tabIndex={0} className="mb-2 focus:text-background focus:bg-gray-300 focus:scale-105 rounded px-2 transition-all duration-1000 ">
+                        <strong>{p}</strong>
+                    </li>
+                ))}
             </ul>
             <footer className="mt-12 text-center">
                 <p className="text-lg text-secondary">
@@ -72,3 +21,13 @@ export default function DocsPage6() {
         </div>
     );
 }
+
+const paragraphs = [
+    "To create assessment modules that allow students to engage in dynamic dialogues with the AI, where they can explore questions, receive supportive hints, and delve deeper into concepts, thereby transforming assessments into a collaborative and less intimidating experience.",
+    "To create low-stakes assessments that simulate real exam conditions but are designed to be supportive and informative, allowing students to build confidence without the pressure of grading.",
+    "To design dashboards that summarize student performance data, highlighting trends and areas for improvement, thus allowing educators to make informed decisions without sifting through individual submissions.",
+    "To use LLMs to generate tailored feedback reports that summarize a student’s strengths and weaknesses, offering targeted resources for improvement specific to their work.",
+    "To create comprehensive guidelines that outline best practices for educators to incorporate GAIA into their lesson plans and assessment strategies.",
+    "To provide prompts that encourage students to express their thoughts, such as “What are your views on [topic] and why?” This invites more personal engagement.",
+    "To provide positive feedback on students' efforts, like GAIA complementing the students' answers on the exam, it reinforces the belief that hard work leads to success. This motivation encourages them to take on new challenges, as they feel more capable and supported.",
+];

@@ -1,12 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { motion } from "framer-motion";
+import {
+    Chart as ChartJS,
+    ArcElement,
+    Tooltip,
+    Legend,
+    ChartData,
+} from "chart.js";
+import { motion, useInView } from "framer-motion";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const DocsPage3 = () => {
-    const data = {
+export default function DocsPage3() {
+    const divRef = useRef<HTMLDivElement>(null);
+    const isInView = useInView(divRef);
+    const data: ChartData<"pie", number[], string> = {
         labels: ["Traditional Exams (81.6%)", "Online Exams (18.4%)"], // Labels for the Pie Chart
         datasets: [
             {
@@ -24,55 +32,70 @@ const DocsPage3 = () => {
             <h1 className="text-5xl font-bold text-center mb-8 text-primary">
                 Problem Statement
             </h1>
-            <p className="text-xl text-gray-300 mb-6">
-                Exams are traditional tools for assessing student competency,
-                but they can also provide valuable feedback for educators.
-                However, individual responses to exam stress vary.
-            </p>
+            <div className="grid grid-cols-2">
+                <div className="text-xl text-gray-300 mb-6 space-y-5 text-justify">
+                    <p>
+                        Exams are traditional tools for assessing student
+                        competency, but they can also provide valuable feedback
+                        for educators. However, individual responses to exam
+                        stress vary.
+                    </p>
 
-            <p className="text-xl text-gray-300 mb-6">
-                High-stakes exams exacerbate anxiety, with 81.6% of students
-                reporting stress. Factors like strict formats and memorization
-                contribute to this, while online exams may reduce anxiety due to
-                flexibility.
-            </p>
+                    <p>
+                        High-stakes exams exacerbate anxiety, with 81.6% of
+                        students reporting stress. Factors like strict formats
+                        and memorization contribute to this, while online exams
+                        may reduce anxiety due to flexibility.
+                    </p>
 
-            <p className="text-xl text-gray-300 mb-6">
-                Trait anxiety negatively impacts performance, especially for
-                anxious students. Beyond academics, it can affect long-term
-                mental health and career aspirations, particularly during the
-                COVID-19 pandemic.
-            </p>
+                    <p>
+                        Trait anxiety negatively impacts performance, especially
+                        for anxious students. Beyond academics, it can affect
+                        long-term mental health and career aspirations,
+                        particularly during the COVID-19 pandemic.
+                    </p>
 
-            <p className="text-xl text-gray-300 mb-6">
-                This highlights the need for more adaptive, student-centered
-                assessment approaches that prioritize mental well-being
-                alongside academic integrity.
-            </p>
-
-            {/* Pie Chart Section */}
-
-            <div className="mt-12 flex flex-col items-center">
-                <h2 className="text-2xl font-semibold text-center text-primary mb-4">
-                    Assessment Type Distribution
-                </h2>
-                <div className="flex justify-center max-w-lg">
-                    <Pie
-                        data={data}
-                        options={{
-                            responsive: true,
-                            plugins: {
-                                legend: {
-                                    position: "top",
-                                },
-                                tooltip: {
-                                    enabled: true,
-                                },
-                            },
-                        }}
-                    />
+                    <p>
+                        This highlights the need for more adaptive,
+                        student-centered assessment approaches that prioritize
+                        mental well-being alongside academic integrity.
+                    </p>
+                </div>
+                <div className="mt-12 flex flex-col items-center">
+                    <h2 className="text-2xl font-semibold text-center text-primary mb-4">
+                        Assessment Type Distribution
+                    </h2>
+                    <div ref={divRef} className="flex justify-center max-w-lg">
+                        {isInView && (
+                            <Pie
+                                data={data}
+                                options={{
+                                    responsive: true,
+                                    plugins: {
+                                        colors: {
+                                            forceOverride: true,
+                                        },
+                                        legend: {
+                                            position: "top",
+                                            labels: {
+                                                color: "#FFFFFF",
+                                                font: {
+                                                    size: 14,
+                                                },
+                                            },
+                                        },
+                                        tooltip: {
+                                            enabled: true,
+                                        },
+                                    },
+                                }}
+                            />
+                        )}
+                    </div>
                 </div>
             </div>
+
+            {/* Pie Chart Section */}
 
             <footer className="mt-12 text-center">
                 <p className="text-lg text-secondary">
@@ -83,5 +106,3 @@ const DocsPage3 = () => {
         </div>
     );
 };
-
-export default DocsPage3;
