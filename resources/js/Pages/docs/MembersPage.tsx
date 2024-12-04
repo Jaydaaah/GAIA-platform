@@ -22,9 +22,11 @@ export default function MembersPage() {
                             <Card>
                                 <div className="flex justify-center mb-2">
                                     <img
-                                        className="w-40 h-40 object-cover object-center rounded-full"
+                                        className="w-36 h-36 object-cover object-center rounded-full"
                                         src={member.src}
                                         title={member.name}
+                                        width={160}
+                                        height={160}
                                     />
                                 </div>
                                 <h2 className="text-xl font-bold text-white mb-2">
@@ -64,17 +66,20 @@ const members = [
         role: "Team Manager",
         description:
             "Oversees the entire project, ensuring the team meets deadlines and stays aligned with project goals.",
+        src: "/assets/prof-cla.jpg",
     },
     {
         name: "Sevilla, Mica",
         role: "Team Coordinator",
         description:
             "Facilitates communication between team members and manages task assignments.",
+        src: "/assets/prof-mic.jpg",
     },
     {
         name: "Ollegue, Ricky",
         role: "Quality Assurance Specialist",
         description:
             "Ensures the platform functions smoothly and identifies potential issues through rigorous testing.",
+        src: "/assets/prof-rick.jpg",
     },
 ];
