@@ -128,18 +128,19 @@ export default function Welcome({
                                     </h2>
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                         {features.map(
-                                            ({ title, description }) => (
+                                            ({ title, description }, i) => (
                                                 <motion.div
+                                                    key={`feature-${i}`}
                                                     initial={{
                                                         scale: 1,
                                                     }}
                                                     whileHover={{
-                                                        scale: 1.08
+                                                        scale: 1.08,
                                                     }}
                                                     transition={{
                                                         duration: 1,
                                                         delay: 0.3,
-                                                        ease: "anticipate"
+                                                        ease: "anticipate",
                                                     }}
                                                 >
                                                     <Card className="h-full">

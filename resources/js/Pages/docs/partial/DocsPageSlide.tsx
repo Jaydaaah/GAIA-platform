@@ -59,7 +59,7 @@ export default function DocsPageSlide({
             }}
             className="w-screen min-h-screen flex flex-col justify-center relative"
         >
-            <div className="absolute top-3 right-10">
+            <div className="absolute top-5 right-10">
                 <button
                     onClick={() => {
                         if (setAutoSnap) {

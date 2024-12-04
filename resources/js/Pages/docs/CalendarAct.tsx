@@ -1,10 +1,75 @@
 export default function CalendarAct() {
+    // The table data (equivalent to your Excel data)
+    const tasks = [
+        {
+            name: 'Concept Phase',
+            aug: 'Wk 1',
+            sep: 'Wk 2-3',
+            oct: '',
+            nov: '',
+            dec: '',
+            color: 'bg-teal-600',
+        },
+        {
+            name: 'Planning (Sprint 0)',
+            aug: '',
+            sep: 'Wk 1-2',
+            oct: '',
+            nov: '',
+            dec: '',
+            color: 'bg-indigo-600',
+        },
+        {
+            name: 'Development (Iterations)',
+            aug: '',
+            sep: '',
+            oct: 'Wk 1-3',
+            nov: '',
+            dec: '',
+            color: 'bg-blue-600',
+        },
+        {
+            name: 'Testing Phase',
+            aug: '',
+            sep: '',
+            oct: '',
+            nov: 'Wk 1-2',
+            dec: '',
+            color: 'bg-green-600',
+        },
+        {
+            name: 'Review/Feedback',
+            aug: '',
+            sep: '',
+            oct: '',
+            nov: 'Wk 3',
+            dec: '',
+            color: 'bg-purple-600',
+        },
+        {
+            name: 'Delivery Phase',
+            aug: '',
+            sep: '',
+            oct: '',
+            nov: '',
+            dec: 'Wk 4',
+            color: 'bg-orange-600',
+        },
+        {
+            name: 'Maintenance Phase',
+            aug: '',
+            sep: '',
+            oct: '',
+            nov: '',
+            dec: 'Wk 4',
+            color: 'bg-red-600',
+        },
+    ];
+
     return (
-        <div className=" p-8 flex flex-col items-center">
+        <div className="p-8 flex flex-col items-center">
             <div className="text-center mb-8">
-                <h1 className="text-5xl font-semibold text-gray-300">
-                    Gantt Chart
-                </h1>
+                <h1 className="text-5xl font-semibold text-gray-300">Gantt Chart</h1>
             </div>
 
             <div className="overflow-x-auto bg-neutral p-6 rounded-xl shadow-lg w-full">
@@ -21,114 +86,46 @@ export default function CalendarAct() {
                     </thead>
 
                     <tbody className="bg-yellow-50 text-black">
-                        <tr>
-                            <td className="px-4 py-2 text-left font-semibold">
-                                Concept Phase
-                            </td>
-                            <td className="px-4 py-2">
-                                <div className="bg-teal-600 text-white py-1 rounded-md w-20 mx-auto">
-                                    Wk 1
-                                </div>
-                            </td>
-                            <td className="px-4 py-2">
-                                <div className="bg-teal-600 text-white py-1 rounded-md w-20 mx-auto">
-                                    Wk 2-3
-                                </div>
-                            </td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                        </tr>
-
-                        <tr>
-                            <td className="px-4 py-2 text-left font-semibold">
-                                Planning (Sprint 0)
-                            </td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2">
-                                <div className="bg-indigo-600 text-white py-1 rounded-md w-20 mx-auto">
-                                    Wk 1-2
-                                </div>
-                            </td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                        </tr>
-
-                        <tr>
-                            <td className="px-4 py-2 text-left font-semibold">
-                                Development (Iterations)
-                            </td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2">
-                                <div className="bg-blue-600 text-white py-1 rounded-md w-20 mx-auto">
-                                    Wk 1-3
-                                </div>
-                            </td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                        </tr>
-
-                        <tr>
-                            <td className="px-4 py-2 text-left font-semibold">
-                                Testing Phase
-                            </td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2">
-                                <div className="bg-green-600 text-white py-1 rounded-md w-20 mx-auto">
-                                    Wk 1-2
-                                </div>
-                            </td>
-                            <td className="px-4 py-2"></td>
-                        </tr>
-
-                        <tr>
-                            <td className="px-4 py-2 text-left font-semibold">
-                                Review/Feedback
-                            </td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2">
-                                <div className="bg-purple-600 text-white py-1 rounded-md w-20 mx-auto">
-                                    Wk 3
-                                </div>
-                            </td>
-                            <td className="px-4 py-2"></td>
-                        </tr>
-
-                        <tr>
-                            <td className="px-4 py-2 text-left font-semibold">
-                                Delivery Phase
-                            </td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2">
-                                <div className="bg-orange-600 text-white py-1 rounded-md w-20 mx-auto">
-                                    Wk 4
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td className="px-4 py-2 text-left font-semibold">
-                                Maintenance Phase
-                            </td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2"></td>
-                            <td className="px-4 py-2">
-                                <div className="bg-red-600 text-white py-1 rounded-md w-20 mx-auto">
-                                    Wk 4
-                                </div>
-                            </td>
-                        </tr>
+                        {tasks.map((task, index) => (
+                            <tr key={index}>
+                                <td className="px-4 py-2 text-left font-semibold">{task.name}</td>
+                                <td className="px-4 py-2">
+                                    {task.aug && (
+                                        <div className={`${task.color} text-white py-1 rounded-md w-20 mx-auto`}>
+                                            {task.aug}
+                                        </div>
+                                    )}
+                                </td>
+                                <td className="px-4 py-2">
+                                    {task.sep && (
+                                        <div className={`${task.color} text-white py-1 rounded-md w-20 mx-auto`}>
+                                            {task.sep}
+                                        </div>
+                                    )}
+                                </td>
+                                <td className="px-4 py-2">
+                                    {task.oct && (
+                                        <div className={`${task.color} text-white py-1 rounded-md w-20 mx-auto`}>
+                                            {task.oct}
+                                        </div>
+                                    )}
+                                </td>
+                                <td className="px-4 py-2">
+                                    {task.nov && (
+                                        <div className={`${task.color} text-white py-1 rounded-md w-20 mx-auto`}>
+                                            {task.nov}
+                                        </div>
+                                    )}
+                                </td>
+                                <td className="px-4 py-2">
+                                    {task.dec && (
+                                        <div className={`${task.color} text-white py-1 rounded-md w-20 mx-auto`}>
+                                            {task.dec}
+                                        </div>
+                                    )}
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>

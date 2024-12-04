@@ -10,25 +10,33 @@ export default function DocsPage2() {
     return (
         <div className="relative px-8 pt-12 pb-15 sm:mx-auto sm:max-w-6xl sm:px-12">
             <h1 className="text-5xl font-bold text-center mb-8 text-primary">
-                Overview of Technology in Education
+                Overview of Current State of Technology
             </h1>
 
             {/* Section 1: Rise of Technology in Education */}
             <div className="mb-10 flex items-center justify-between gap-10">
                 <div className="w-full md:w-1/2 pr-4 text-justify">
                     <p className="text-xl text-gray-300 mb-6">
-                        Technology in education has revolutionized learning,
-                        especially for students facing exam anxiety.
+                        Technology is transforming education, especially for
+                        students facing exam anxiety, by providing innovative
+                        solutions that improve learning experiences and reduce
+                        stress during assessments.
                     </p>
                     <p className="text-xl text-gray-300 mb-6">
-                        AI-powered tools like online proctoring and adaptive
-                        assessments create less intimidating exam environments.
+                        AI-powered tools like online proctoring, adaptive
+                        assessments, and platforms such as ChatGPT, Socratic AI,
+                        and Gradescope offer real-time, personalized feedback,
+                        creating a less intimidating environment for students
+                        during exams.
                     </p>
                     <p className="text-xl text-gray-300 mb-6">
-                        AI-based emotional support tools help balance academic
-                        integrity with student well-being.
+                        Integrating emotional support features within AI-driven
+                        tools balances academic integrity with student
+                        well-being, helping reduce anxiety while fostering a
+                        more supportive learning atmosphere.
                     </p>
                 </div>
+
                 <Card className="max-w-md">
                     <Swiper
                         spaceBetween={30}
