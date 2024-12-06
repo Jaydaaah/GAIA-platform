@@ -1,40 +1,23 @@
-import { Button } from "@/Components/Button";
-import ChatBubble from "@/Components/Chatbubble/Chatbubble";
-import LiveTime from "@/Components/LiveTime";
-import StreamingText from "@/Components/Stream/StreamingText";
 import ChatInput from "@/Components/TextArea/ChatInput";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
-import { GrogStreamPrompt, GroqPrompt } from "@/lib/Groq-api";
+import { GroqPrompt } from "@/lib/Groq-api";
 import { PageProps } from "@/types";
 import { Chat } from "@/types/models";
-import { Head, router, useForm, usePage } from "@inertiajs/react";
+import { Head, router, useForm } from "@inertiajs/react";
 import axios from "axios";
-import {
-    FormEvent,
-    PropsWithChildren,
-    useCallback,
-    useEffect,
-    useMemo,
-    useState,
-} from "react";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import TypewriterComponent from "typewriter-effect";
+import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
+import RenderedMessage from "./partial/RenderedMessage";
+import ExamStart from "./partial/ExamStart";
+import TypingResponse from "./partial/TypingResponse";
+import ExamHeader from "./partial/ExamHeader";
 
 export default function Exam({
-    auth,
     chats,
-    api,
-    avatar,
 }: PageProps<{
     chats: Chat[];
     api: {
         key: string;
         provider: string;
-    };
-    avatar: {
-        ai: string;
-        you: string;
     };
 }>) {
     const [temporaryEnd, setEnd] = useState(false);
@@ -77,61 +60,33 @@ export default function Exam({
     const renderMessages = useMemo(() => {
         return chats.map(({ side, message, created_at }, index) => {
             const name = side == "right" ? "You" : "AI";
-            const time = new Date(created_at);
-
             const messageLower = message.toLowerCase().trim();
+
+            const time = new Date(created_at);
 
             if (name == "You" && messageLower == "end") {
                 setEnd(true);
             }
-
-            if (name != "You" || messageLower != "start") {
-                return (
-                    <ChatBubble
-                        key={`chat-bubble-${created_at}-${index}`}
-                        side={(side == "right" && "right") || "left"}
-                        src={side == "right" ? avatar.you : avatar.ai}
-                        name={name}
-                        time={time}
-                    >
-                        <Markdown
-                            remarkPlugins={[
-                                [remarkGfm, { singleTilde: false }],
-                            ]}
-                        >
-                            {message}
-                        </Markdown>
-                    </ChatBubble>
-                );
-            }
+            return (
+                <RenderedMessage
+                    message={message}
+                    side={(side == "right" && "right") || "left"}
+                    time={time}
+                />
+            );
         });
     }, [chats]);
 
     const renderTypingResponse = useMemo(() => {
         if (tempStreamDonetext) {
             return (
-                <ChatBubble
-                    key={`chat-bubble-${Date.now()}`}
-                    side="left"
-                    src={avatar.ai}
-                    name="AI"
-                    time={new Date()}
-                >
-                    <TypewriterComponent
-                        onInit={(typewriter) =>
-                            typewriter
-                                .start()
-                                .changeDelay(30)
-                                .typeString(tempStreamDonetext)
-                                .callFunction(() => {
-                                    syncResponse();
-                                })
-                        }
-                    />
-                </ChatBubble>
+                <TypingResponse
+                    syncResponse={syncResponse}
+                    tempStreamDonetext={tempStreamDonetext}
+                />
             );
         }
-    }, [tempStreamDonetext]);
+    }, [tempStreamDonetext, syncResponse]);
 
     useEffect(() => {
         if (renderMessages.length <= 0) {
@@ -140,18 +95,7 @@ export default function Exam({
     }, [renderMessages]);
 
     return (
-        <Authenticated
-            header={
-                <div className="flex flex-col">
-                    <span className="font-extralight text-secondary">
-                        <LiveTime />
-                    </span>
-                    <span className="text-sm">
-                        temporary function: type "End" to end the chat
-                    </span>
-                </div>
-            }
-        >
+        <Authenticated header={<ExamHeader />}>
             <Head title="Exam" />
 
             <div className="flex-grow flex flex-col items-center justify-center">
@@ -178,27 +122,15 @@ export default function Exam({
                         </div>
                     </div>
                 ) : (
-                    <div className="flex-grow flex items-center justify-center h-[70vh] flex-col">
-                        {/* Instruction Text */}
-                        <p className="text-lg text-white mb-4">
-                            Click the "Start" button to begin the exam or the
-                            quiz.
-                        </p>
-
-                        {/* Start Button */}
-
-                        <Button
-                            onClick={() => {
-                                if (data.prompt == "Start") {
-                                    post(route("exam.edit"), {
-                                        onSuccess,
-                                    });
-                                }
-                            }}
-                        >
-                            Start
-                        </Button>
-                    </div>
+                    <ExamStart
+                        onClick={() => {
+                            if (data.prompt == "Start") {
+                                post(route("exam.edit"), {
+                                    onSuccess,
+                                });
+                            }
+                        }}
+                    />
                 )}
             </div>
         </Authenticated>
