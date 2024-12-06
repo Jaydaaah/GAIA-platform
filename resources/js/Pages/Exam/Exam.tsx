@@ -69,6 +69,7 @@ export default function Exam({
             }
             return (
                 <RenderedMessage
+                    key={`message-${index}`}
                     message={message}
                     side={(side == "right" && "right") || "left"}
                     time={time}
