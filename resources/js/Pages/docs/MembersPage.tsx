@@ -55,7 +55,7 @@ export default function MembersPage() {
 
 const members = [
     {
-        name: "Jay Dee",
+        name: "Siarot, JD",
         role: "Team Lead",
         description:
             "Leads technical development, sets coding standards, and ensures high performance and reliability.",
@@ -79,7 +79,7 @@ const members = [
         name: "Ollegue, Ricky",
         role: "Quality Assurance Specialist",
         description:
-            "Ensures the platform functions smoothly and identifies potential issues through rigorous testing.",
+            "Ensures the platform functions smoothly and identifies potential issues through rigorous testings.",
         src: "/assets/prof-rick.jpg",
     },
 ];

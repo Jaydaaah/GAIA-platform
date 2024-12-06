@@ -22,7 +22,7 @@ export default function Sidebar({
 
     return (
         <>
-            <header className="bg-white shadow dark:bg-gray-800 w-full flex justify-start">
+            <header className="bg-white shadow dark:bg-background w-full flex justify-start">
                 <button
                     data-drawer-target="default-sidebar"
                     data-drawer-toggle="default-sidebar"
@@ -59,7 +59,7 @@ export default function Sidebar({
                                 <span className="inline-flex rounded-md">
                                     <button
                                         type="button"
-                                        className="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none dark:bg-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+                                        className="inline-flex items-center rounded-md border border-transparent px-3 py-2 text-sm font-medium leading-4 text-gray-600 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none dark:text-secondary dark:hover:text-gray-300"
                                     >
                                         {user.name}
 
@@ -142,7 +142,7 @@ export default function Sidebar({
                 className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
                 aria-label="Sidebar"
             >
-                <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+                <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-background">
                     <ul className="space-y-2 font-medium">{renderedChild}</ul>
                 </div>
             </aside>

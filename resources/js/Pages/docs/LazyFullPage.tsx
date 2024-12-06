@@ -18,6 +18,7 @@ import MembersPage from "./MembersPage";
 import { Dispatch, SetStateAction, useMemo } from "react";
 import DocsPageSlide from "./partial/DocsPageSlide";
 import DocsPage2b from "./DocsPage2b";
+import DocsPage15 from "./DocsPage15";
 
 export default function LazyFullPage({
     autoSnap,
@@ -57,6 +58,7 @@ const slides = [
     <DocsPage12 />,
     <DocsPage13 />,
     <DocsPage14 />,
+    <DocsPage15 />,
     <CalendarAct />,
     <SystemRequirement />,
 ];

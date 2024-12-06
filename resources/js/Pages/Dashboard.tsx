@@ -7,7 +7,7 @@ export default function Dashboard() {
         <DashboardLayout
             header={
                 <h2 className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-                    Dashboard
+                    Educators' Dashboard
                 </h2>
             }
         >
@@ -15,7 +15,7 @@ export default function Dashboard() {
 
             <div className="py-12">
                 <div className="mx-auto sm:px-6 lg:px-8">
-                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800">
+                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-neutral/30">
                         <div className="p-6 text-gray-900 dark:text-gray-100">
                             Welcome to the GAIA Dashboard!
                         </div>
@@ -31,35 +31,29 @@ export default function Dashboard() {
                                 Hello, Admin!
                             </span>
                         </div>
-                        <button
-                            id="toggleDarkMode"
-                            className="bg-gray-800 text-white px-3 py-1 rounded hover:bg-gray-700 dark:bg-gray-300 dark:text-gray-900 dark:hover:bg-gray-200"
-                        >
-                            Toggle Dark Mode
-                        </button>
                     </header>
 
                     {/* Key Statistics */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-                        <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+                        <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Total Students
                             </h3>
                             <p className="text-2xl font-bold">1,234</p>
                         </div>
-                        <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+                        <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Active Assessments
                             </h3>
                             <p className="text-2xl font-bold">87</p>
                         </div>
-                        <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+                        <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Courses Available
                             </h3>
                             <p className="text-2xl font-bold">15</p>
                         </div>
-                        <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+                        <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Pending Feedback
                             </h3>
@@ -68,25 +62,25 @@ export default function Dashboard() {
                     </div>
 
                     {/* Assessments Overview Chart */}
-                    <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                    <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                         <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                             Assessment Progress Overview
                         </h2>
                         <div style={{ height: 300 }}>
-                            <div className="bg-gray-200 dark:bg-gray-700 h-full flex items-center justify-center text-gray-500 dark:text-gray-300">
+                            <div className="bg-gray-200 dark:bg-neutral/30 h-full flex items-center justify-center text-gray-500 dark:text-gray-300">
                                 Assessment Progress Chart Placeholder
                             </div>
                         </div>
                     </div>
 
                     {/* Course List */}
-                    <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                    <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                         <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                             Course Management
                         </h2>
-                        <table className="min-w-full bg-white dark:bg-gray-800">
+                        <table className="min-w-full bg-white dark:bg-neutral/30">
                             <thead>
-                                <tr className="w-full bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 uppercase text-sm leading-normal">
+                                <tr className="w-full bg-gray-200 text-gray-600 dark:bg-neutral/30 dark:text-gray-300 uppercase text-sm leading-normal">
                                     <th className="py-3 px-6 text-left">
                                         Course ID
                                     </th>
@@ -112,7 +106,7 @@ export default function Dashboard() {
                                     <td className="py-3 px-6">120</td>
                                     <td className="py-3 px-6">Active</td>
                                     <td className="py-3 px-6">
-                                        <button className="text-blue-500 hover:underline dark:text-blue-400">
+                                        <button className="text-blue-500 hover:underline dark:text-primary">
                                             Edit
                                         </button>
                                         <button className="text-red-500 hover:underline dark:text-red-400 ml-3">
@@ -126,13 +120,13 @@ export default function Dashboard() {
                     </div>
 
                     {/* Student List */}
-                    <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+                    <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow">
                         <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                             Student Management
                         </h2>
-                        <table className="min-w-full bg-white dark:bg-gray-800">
+                        <table className="min-w-full bg-white dark:bg-neutral/30">
                             <thead>
-                                <tr className="w-full bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 uppercase text-sm leading-normal">
+                                <tr className="w-full bg-gray-200 text-gray-600 dark:bg-neutral/30 dark:text-gray-300 uppercase text-sm leading-normal">
                                     <th className="py-3 px-6 text-left">
                                         Student ID
                                     </th>
@@ -160,7 +154,7 @@ export default function Dashboard() {
                                     </td>
                                     <td className="py-3 px-6">Active</td>
                                     <td className="py-3 px-6">
-                                        <button className="text-blue-500 hover:underline dark:text-blue-400">
+                                        <button className="text-blue-500 hover:underline dark:text-primary">
                                             View
                                         </button>
                                         <button className="text-red-500 hover:underline dark:text-red-400 ml-3">

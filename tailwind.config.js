@@ -31,4 +31,5 @@ export default {
     },
 
     plugins: [forms],
+    darkMode: "class"
 };

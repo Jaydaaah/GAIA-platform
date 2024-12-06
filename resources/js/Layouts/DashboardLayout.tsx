@@ -4,18 +4,17 @@ import NavLink from "@/Components/Sidebar/NavLink";
 import Sidebar from "@/Components/Sidebar/Sidebar";
 import { PropsWithChildren, ReactNode } from "react";
 import { SidebarConfig } from "./DashboardConfiguration";
+import GlowingLogo from "@/Components/GlowingLogo";
 
 export default function DashboardLayout({
     header,
     children,
 }: PropsWithChildren<{ header?: ReactNode }>) {
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div className="min-h-screen bg-gray-100 dark:bg-background">
             <Sidebar header={header}>
                 <div className="p-3">
-                    <h1 className="text-xl">
-                        GAIA Platform
-                    </h1>
+                    <GlowingLogo>GAIA Platform</GlowingLogo>
                 </div>
                 <br/>
                 {SidebarConfig.map(

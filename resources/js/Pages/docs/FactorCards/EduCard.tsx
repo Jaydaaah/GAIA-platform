@@ -10,7 +10,10 @@ export default function EduCard() {
                     Educational Factors
                 </h1>
                 <div className="h-64 w-full">
-                    <h2 className="text-xl mb-6 text-primary text-center">
+                    <div className="flex justify-center mb-2">
+                        <img src="https://drive.google.com/thumbnail?id=1O6-iK1cW8nTIstNKfjwG-UxK52HfikLJ"></img>
+                    </div>
+                    <h2 className="text-xl mb-6 text-center">
                         Examination anxiety stems from educational pressures,
                         especially high-stakes tests that stress future
                         opportunities, with test-based accountability

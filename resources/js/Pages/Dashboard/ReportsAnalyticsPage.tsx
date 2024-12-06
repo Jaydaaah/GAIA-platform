@@ -24,7 +24,7 @@ export default function ReportsAnalyticsPage() {
                     </button>
                 </header>
                 {/* Engagement Reports Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Engagement Reports
                     </h2>
@@ -37,7 +37,7 @@ export default function ReportsAnalyticsPage() {
                     </button>
                 </div>
                 {/* Learning Progress Analytics Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Learning Progress Analytics
                     </h2>
@@ -50,7 +50,7 @@ export default function ReportsAnalyticsPage() {
                     </button>
                 </div>
                 {/* Assessment Performance Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Assessment Performance
                     </h2>
@@ -63,7 +63,7 @@ export default function ReportsAnalyticsPage() {
                     </button>
                 </div>
                 {/* Export & Share Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Export &amp; Share
                     </h2>

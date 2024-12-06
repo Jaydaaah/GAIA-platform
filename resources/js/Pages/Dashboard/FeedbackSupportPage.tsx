@@ -24,7 +24,7 @@ export default function FeedbackSupportPage() {
                     </button>
                 </header>
                 {/* Feedback Collection Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Feedback Collection
                     </h2>
@@ -33,7 +33,7 @@ export default function FeedbackSupportPage() {
                         assessments, or platform usability:
                     </p>
                     <textarea
-                        className="mt-2 w-full p-2 border border-gray-300 rounded dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                        className="mt-2 w-full p-2 border border-gray-300 rounded dark:border-gray-600 dark:bg-neutral/30 dark:text-gray-200"
                         rows={4}
                         placeholder="Enter your feedback here..."
                         defaultValue={""}
@@ -43,7 +43,7 @@ export default function FeedbackSupportPage() {
                     </button>
                 </div>
                 {/* Help Center Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Help Center
                     </h2>
@@ -56,7 +56,7 @@ export default function FeedbackSupportPage() {
                     </button>
                 </div>
                 {/* Support Tickets Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Support Tickets
                     </h2>
@@ -69,7 +69,7 @@ export default function FeedbackSupportPage() {
                             Issue Description:
                         </label>
                         <textarea
-                            className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                            className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-neutral/30 dark:text-gray-200"
                             rows={4}
                             placeholder="Describe your issue..."
                             defaultValue={""}
@@ -83,7 +83,7 @@ export default function FeedbackSupportPage() {
                     </form>
                 </div>
                 {/* Platform Updates Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Platform Updates
                     </h2>

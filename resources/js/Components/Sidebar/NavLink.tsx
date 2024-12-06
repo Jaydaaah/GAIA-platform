@@ -19,12 +19,12 @@ export default function NavLink({
     return (
         <Link
             className={`${className}
-            flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group
-            ${route_name && !!route().current<string>(route_name) && "bg-blue-500 font-bold bg-opacity-5"}`}
+            flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-neutral/50 group
+            ${route_name && !!route().current<string>(route_name) && "bg-neutral/10 font-bold"}`}
             href={!!route_name ? route(route_name) : href ?? "#"}
         >
-            {reactIcon}
-            <span className="flex-1 ms-3 whitespace-nowrap">{children}</span>
+            <span className="dark:text-secondary">{reactIcon}</span>
+            <span className="flex-1 ms-3 whitespace-nowrap dark:text-primary">{children}</span>
         </Link>
     );
 }

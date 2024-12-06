@@ -1,4 +1,8 @@
-import { ChatPromptTemplate, HumanMessagePromptTemplate, AIMessagePromptTemplate } from "@langchain/core/prompts";
+import {
+    ChatPromptTemplate,
+    HumanMessagePromptTemplate,
+    AIMessagePromptTemplate,
+} from "@langchain/core/prompts";
 
 const chatbotRole = `
 Your Name: GAIA Bot
@@ -9,6 +13,7 @@ Instruction:
 - Instead, guide students to think critically and offer hints or clarifications when necessary.
 - Be polite and professional in all interactions.
 - Keep responses concise and focused on educational assistance.
+- When a student says "start," you will pick a topic and initiate a discussion on that topic.
 `;
 
 export const FirstPromptTemplate = ChatPromptTemplate.fromMessages([

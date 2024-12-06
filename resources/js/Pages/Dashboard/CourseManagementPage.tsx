@@ -24,13 +24,13 @@ export default function CourseManagementPage() {
                     </button>
                 </header>
                 {/* Course Library Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Course Library
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {/* Course Card */}
-                        <div className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow">
+                        <div className="bg-gray-100 dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Introduction to Programming
                             </h3>
@@ -41,11 +41,11 @@ export default function CourseManagementPage() {
                                 Description: An introductory course on
                                 programming concepts.
                             </p>
-                            <button className="text-blue-500 hover:underline dark:text-blue-400">
+                            <button className="text-blue-500 hover:underline dark:text-primary">
                                 Edit Course
                             </button>
                         </div>
-                        <div className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow">
+                        <div className="bg-gray-100 dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Data Science Fundamentals
                             </h3>
@@ -55,11 +55,11 @@ export default function CourseManagementPage() {
                             <p className="text-gray-500 dark:text-gray-400">
                                 Description: Learn the basics of data science.
                             </p>
-                            <button className="text-blue-500 hover:underline dark:text-blue-400">
+                            <button className="text-blue-500 hover:underline dark:text-primary">
                                 Edit Course
                             </button>
                         </div>
-                        <div className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow">
+                        <div className="bg-gray-100 dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Advanced Web Development
                             </h3>
@@ -70,14 +70,14 @@ export default function CourseManagementPage() {
                                 Description: In-depth study of web development
                                 technologies.
                             </p>
-                            <button className="text-blue-500 hover:underline dark:text-blue-400">
+                            <button className="text-blue-500 hover:underline dark:text-primary">
                                 Edit Course
                             </button>
                         </div>
                     </div>
                 </div>
                 {/* Module Editor Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Module Editor
                     </h2>
@@ -96,39 +96,39 @@ export default function CourseManagementPage() {
                     </div>
                 </div>
                 {/* Content Library Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Content Library
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow">
+                        <div className="bg-gray-100 dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Video Lecture: Python Basics
                             </h3>
-                            <button className="text-blue-500 hover:underline dark:text-blue-400">
+                            <button className="text-blue-500 hover:underline dark:text-primary">
                                 Edit
                             </button>
                         </div>
-                        <div className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow">
+                        <div className="bg-gray-100 dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Article: Understanding Algorithms
                             </h3>
-                            <button className="text-blue-500 hover:underline dark:text-blue-400">
+                            <button className="text-blue-500 hover:underline dark:text-primary">
                                 Edit
                             </button>
                         </div>
-                        <div className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow">
+                        <div className="bg-gray-100 dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Quiz: Basics of JavaScript
                             </h3>
-                            <button className="text-blue-500 hover:underline dark:text-blue-400">
+                            <button className="text-blue-500 hover:underline dark:text-primary">
                                 Edit
                             </button>
                         </div>
                     </div>
                 </div>
                 {/* AI-Generated Content Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         AI-Generated Content
                     </h2>

@@ -10,7 +10,10 @@ export default function EnvironCard() {
                     Environmental Factors
                 </h1>
                 <div className="h-64 w-full">
-                    <h2 className="text-xl mb-6 text-primary text-center">
+                    <div className="flex justify-center mb-2">
+                        <img src="https://drive.google.com/thumbnail?id=1DYEh73U2HntTZ20t5IGKxFamsXZQM5WV"></img>
+                    </div>
+                    <h2 className="text-xl mb-6 text-center">
                         Environmental factors, such as strict deadlines and
                         heavy workloads, significantly contribute to exam
                         anxiety. Agustí et al. (2018) emphasize that academic

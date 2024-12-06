@@ -24,7 +24,7 @@ export default function DocumentationPage() {
                     </button>
                 </header>
                 {/* Guides & Tutorials Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Guides &amp; Tutorials
                     </h2>
@@ -37,7 +37,7 @@ export default function DocumentationPage() {
                     </button>
                 </div>
                 {/* Best Practices Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Best Practices
                     </h2>
@@ -50,7 +50,7 @@ export default function DocumentationPage() {
                     </button>
                 </div>
                 {/* API Documentation Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         API Documentation
                     </h2>

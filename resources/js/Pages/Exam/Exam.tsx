@@ -1,4 +1,6 @@
+import { Button } from "@/Components/Button";
 import ChatBubble from "@/Components/Chatbubble/Chatbubble";
+import LiveTime from "@/Components/LiveTime";
 import StreamingText from "@/Components/Stream/StreamingText";
 import ChatInput from "@/Components/TextArea/ChatInput";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
@@ -11,6 +13,7 @@ import {
     FormEvent,
     PropsWithChildren,
     useCallback,
+    useEffect,
     useMemo,
     useState,
 } from "react";
@@ -70,7 +73,7 @@ export default function Exam({
 
     const renderMessages = useMemo(() => {
         return chats.map(({ side, message, created_at }, index) => {
-            const name = side == "right" ? "me" : "AI";
+            const name = side == "right" ? "You" : "AI";
             const time = new Date(created_at);
 
             return (
@@ -113,29 +116,73 @@ export default function Exam({
         }
     }, [tempStreamDonetext]);
 
+    useEffect(() => {
+        if (renderMessages.length <= 0) {
+            setData("prompt", "Start");
+        }
+    }, [renderMessages]);
+
     return (
-        <Authenticated>
-            <Head title="Exam" />
-            <div className="flex-grow flex flex-col items-center">
-                <div className="flex-grow w-full max-w-4xl space-y-6 sm:px-6 lg:px-8 flex flex-col-reverse">
-                    <ChatInput
-                        value={data.prompt}
-                        processing={processing}
-                        onSubmit={onSubmit}
-                        onChange={({ target }) => {
-                            setData("prompt", target.value);
-                        }}
-                    />
-                    <div className="flex-grow flex flex-col-reverse gap-2 h-[80vh] overflow-x-hidden overflow-y-scroll px-5 scrollbar py-4">
-                        {renderTypingResponse}
-                        {renderMessages}
-                    </div>
+        <Authenticated
+            header={
+                <div className="flex flex-col">
+                    <span className="font-extralight text-secondary">
+                        <LiveTime />
+                        <button className="ml-2 class-name text-sm underline hover:opacity-50 active:opacity-80">
+                            End
+                        </button>
+                    </span>
+                    <span className="text-sm">End button is temporary</span>
                 </div>
-                {/* <div className="flex-grow w-full max-w-7xl space-y-6 sm:px-6 lg:px-8">
-                    <div className="bg-white p-4 shadow sm:rounded-lg sm:p-8 dark:bg-gray-800">
-                        Hello World
+            }
+        >
+            <Head title="Exam" />
+
+            <div className="flex-grow flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center">
+                    <h2 className="text-2xl dark:text-primary pt-5">
+                        Topic: Programming Languages and Execution Models
+                    </h2>
+                </div>
+
+                {renderMessages.length > 0 ? (
+                    <div className="flex-grow w-full max-w-4xl space-y-6 sm:px-6 lg:px-8 flex flex-col-reverse">
+                        <ChatInput
+                            value={data.prompt}
+                            processing={processing}
+                            onSubmit={onSubmit}
+                            onChange={({ target }) => {
+                                setData("prompt", target.value);
+                            }}
+                        />
+                        <div className="flex-grow flex flex-col-reverse gap-5 h-[75vh] overflow-x-hidden overflow-y-scroll px-5 scrollbar py-4">
+                            {renderTypingResponse}
+                            {renderMessages}
+                        </div>
                     </div>
-                </div> */}
+                ) : (
+                    <div className="flex-grow flex items-center justify-center h-[70vh] flex-col">
+                        {/* Instruction Text */}
+                        <p className="text-lg text-white mb-4">
+                            Click the "Start" button to begin the exam or the
+                            quiz.
+                        </p>
+
+                        {/* Start Button */}
+
+                        <Button
+                            onClick={() => {
+                                if (data.prompt == "Start") {
+                                    post(route("exam.edit"), {
+                                        onSuccess,
+                                    });
+                                }
+                            }}
+                        >
+                            Start
+                        </Button>
+                    </div>
+                )}
             </div>
         </Authenticated>
     );

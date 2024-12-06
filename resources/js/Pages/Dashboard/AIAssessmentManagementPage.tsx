@@ -24,12 +24,12 @@ export default function AIAssessmentManagementPage() {
                     </button>
                 </header>
                 {/* Conversational Assessments Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Conversational Assessments
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow">
+                        <div className="bg-gray-100 dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Assessment with John Doe
                             </h3>
@@ -40,11 +40,11 @@ export default function AIAssessmentManagementPage() {
                                 Insights: Engaged in problem-solving
                                 discussions.
                             </p>
-                            <button className="text-blue-500 hover:underline dark:text-blue-400">
+                            <button className="text-blue-500 hover:underline dark:text-primary">
                                 View Conversation Log
                             </button>
                         </div>
-                        <div className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow">
+                        <div className="bg-gray-100 dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Assessment with Jane Smith
                             </h3>
@@ -55,14 +55,14 @@ export default function AIAssessmentManagementPage() {
                                 Insights: Showed improvement in critical
                                 thinking.
                             </p>
-                            <button className="text-blue-500 hover:underline dark:text-blue-400">
+                            <button className="text-blue-500 hover:underline dark:text-primary">
                                 View Conversation Log
                             </button>
                         </div>
                     </div>
                 </div>
                 {/* Assessment Templates Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Assessment Templates
                     </h2>
@@ -83,13 +83,13 @@ export default function AIAssessmentManagementPage() {
                     </div>
                 </div>
                 {/* Performance Insights Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Performance Insights
                     </h2>
-                    <table className="min-w-full bg-white dark:bg-gray-800">
+                    <table className="min-w-full bg-white dark:bg-neutral/30">
                         <thead>
-                            <tr className="w-full bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 uppercase text-sm leading-normal">
+                            <tr className="w-full bg-gray-200 text-gray-600 dark:bg-neutral/30 dark:text-gray-300 uppercase text-sm leading-normal">
                                 <th className="py-3 px-6 text-left">
                                     Student Name
                                 </th>
@@ -124,7 +124,7 @@ export default function AIAssessmentManagementPage() {
                     </table>
                 </div>
                 {/* Scoring & Review Tools Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Scoring &amp; Review Tools
                     </h2>
@@ -134,14 +134,14 @@ export default function AIAssessmentManagementPage() {
                         </label>
                         <input
                             type="text"
-                            className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                            className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-neutral/30 dark:text-gray-200"
                             placeholder="Enter scoring criteria"
                         />
                         <label className="block mb-2 text-gray-600 dark:text-gray-300">
                             Manual Feedback:
                         </label>
                         <textarea
-                            className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                            className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-neutral/30 dark:text-gray-200"
                             rows={4}
                             placeholder="Enter feedback"
                             defaultValue={""}

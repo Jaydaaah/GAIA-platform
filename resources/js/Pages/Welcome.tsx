@@ -82,7 +82,7 @@ export default function Welcome({
                                         </p>
                                         {/* <a
                                         href="#contact"
-                                        className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700 transition duration-300"
+                                        className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-neutral/50 dark:text-green-400 dark:hover:bg-gray-700 transition duration-300"
                                     >
                                         Get Started
                                     </a> */}
@@ -90,7 +90,7 @@ export default function Welcome({
                                             {/* {auth.user ? (
                                             <Link
                                                 href={route("dashboard")}
-                                                className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700 transition duration-300"
+                                                className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-neutral/50 dark:text-green-400 dark:hover:bg-gray-700 transition duration-300"
                                             >
                                                 Dashboard
                                             </Link>
@@ -98,13 +98,13 @@ export default function Welcome({
                                             <>
                                                 <Link
                                                     href={route("login")}
-                                                    className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700 transition duration-300"
+                                                    className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-neutral/50 dark:text-green-400 dark:hover:bg-gray-700 transition duration-300"
                                                 >
                                                     Log in
                                                 </Link>
                                                 <Link
                                                     href={route("register")}
-                                                    className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700 transition duration-300"
+                                                    className="bg-white text-green-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-200 dark:bg-neutral/50 dark:text-green-400 dark:hover:bg-gray-700 transition duration-300"
                                                 >
                                                     Register
                                                 </Link>

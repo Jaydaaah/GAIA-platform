@@ -24,18 +24,18 @@ export default function MessagingPage() {
                     </button>
                 </header>
                 {/* Direct Messaging Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Direct Messaging
                     </h2>
-                    <div className="border border-gray-300 rounded-lg p-4 h-48 overflow-y-auto dark:border-gray-600 dark:bg-gray-700">
+                    <div className="border border-gray-300 rounded-lg p-4 h-48 overflow-y-auto dark:border-gray-600 dark:bg-neutral/30">
                         <p className="text-gray-500 dark:text-gray-300">
                             Chat with students here...
                         </p>
                     </div>
                     <input
                         type="text"
-                        className="mt-4 w-full p-2 border border-gray-300 rounded dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                        className="mt-4 w-full p-2 border border-gray-300 rounded dark:border-gray-600 dark:bg-neutral/30 dark:text-gray-200"
                         placeholder="Type your message..."
                     />
                     <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
@@ -43,12 +43,12 @@ export default function MessagingPage() {
                     </button>
                 </div>
                 {/* Broadcast Announcements Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Broadcast Announcements
                     </h2>
                     <textarea
-                        className="w-full p-2 border border-gray-300 rounded dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                        className="w-full p-2 border border-gray-300 rounded dark:border-gray-600 dark:bg-neutral/30 dark:text-gray-200"
                         rows={4}
                         placeholder="Write your announcement here..."
                         defaultValue={""}
@@ -58,7 +58,7 @@ export default function MessagingPage() {
                     </button>
                 </div>
                 {/* Automated Notifications Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow mb-10">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Automated Notifications
                     </h2>
@@ -72,7 +72,7 @@ export default function MessagingPage() {
                         </label>
                         <input
                             type="text"
-                            className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                            className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-neutral/30 dark:text-gray-200"
                             placeholder="Enter notification message"
                         />
                         <label className="block mb-2 text-gray-600 dark:text-gray-300">
@@ -80,7 +80,7 @@ export default function MessagingPage() {
                         </label>
                         <input
                             type="date"
-                            className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                            className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-neutral/30 dark:text-gray-200"
                         />
                         <button
                             type="submit"
@@ -91,13 +91,13 @@ export default function MessagingPage() {
                     </form>
                 </div>
                 {/* Message History Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+                <div className="bg-white dark:bg-neutral/30 p-5 rounded-lg shadow">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Message History
                     </h2>
-                    <table className="min-w-full bg-white dark:bg-gray-800">
+                    <table className="min-w-full bg-white dark:bg-neutral/30">
                         <thead>
-                            <tr className="w-full bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 uppercase text-sm leading-normal">
+                            <tr className="w-full bg-gray-200 text-gray-600 dark:bg-neutral/30 dark:text-gray-300 uppercase text-sm leading-normal">
                                 <th className="py-3 px-6 text-left">Date</th>
                                 <th className="py-3 px-6 text-left">Sender</th>
                                 <th className="py-3 px-6 text-left">Message</th>

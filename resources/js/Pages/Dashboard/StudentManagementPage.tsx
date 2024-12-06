@@ -1,3 +1,4 @@
+import Card from "@/Components/Card/Card";
 import DashboardLayout from "@/Layouts/DashboardLayout";
 import { Head } from "@inertiajs/react";
 
@@ -6,14 +7,14 @@ export default function StudentManagementPage() {
         <DashboardLayout
             header={
                 <h2 className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-                    Dashboard
+                    Student Management
                 </h2>
             }
         >
             <Head title="Student Management" />
 
-            <div className="flex-1 p-10">
-                <header className="flex justify-between items-center mb-5">
+            <div className="flex-1 p-10 flex flex-col gap-10">
+                <header className="flex justify-between items-center">
                     <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-200">
                         Student Management Dashboard
                     </h1>
@@ -25,13 +26,13 @@ export default function StudentManagementPage() {
                     </button>
                 </header>
                 {/* Student Profiles Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <Card className="p-5">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Student Profiles
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {/* Student Profile Card */}
-                        <div className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow">
+                        <div className="bg-gray-100 dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 John Doe
                             </h3>
@@ -41,11 +42,11 @@ export default function StudentManagementPage() {
                             <p className="text-gray-500 dark:text-gray-400">
                                 Current Courses: Math, Science
                             </p>
-                            <button className="text-blue-500 hover:underline dark:text-blue-400">
+                            <button className="text-blue-500 hover:underline dark:text-secondary">
                                 View Details
                             </button>
                         </div>
-                        <div className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow">
+                        <div className="bg-gray-100 dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Jane Smith
                             </h3>
@@ -55,11 +56,11 @@ export default function StudentManagementPage() {
                             <p className="text-gray-500 dark:text-gray-400">
                                 Current Courses: History, Art
                             </p>
-                            <button className="text-blue-500 hover:underline dark:text-blue-400">
+                            <button className="text-blue-500 hover:underline dark:text-secondary">
                                 View Details
                             </button>
                         </div>
-                        <div className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow">
+                        <div className="bg-gray-100 dark:bg-neutral/30 p-5 rounded-lg shadow">
                             <h3 className="text-gray-600 dark:text-gray-300">
                                 Michael Johnson
                             </h3>
@@ -69,20 +70,20 @@ export default function StudentManagementPage() {
                             <p className="text-gray-500 dark:text-gray-400">
                                 Current Courses: N/A
                             </p>
-                            <button className="text-blue-500 hover:underline dark:text-blue-400">
+                            <button className="text-blue-500 hover:underline dark:text-secondary">
                                 View Details
                             </button>
                         </div>
                     </div>
-                </div>
+                </Card>
                 {/* Progress Tracking Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <Card className="p-5">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Progress Tracking
                     </h2>
-                    <table className="min-w-full bg-white dark:bg-gray-800">
+                    <table className="min-w-full bg-white dark:bg-neutral/30">
                         <thead>
-                            <tr className="w-full bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 uppercase text-sm leading-normal">
+                            <tr className="w-full bg-gray-200 text-gray-600 dark:bg-neutral/30 dark:text-gray-300 uppercase text-sm leading-normal">
                                 <th className="py-3 px-6 text-left">
                                     Student Name
                                 </th>
@@ -112,9 +113,9 @@ export default function StudentManagementPage() {
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </Card>
                 {/* Enrollment & Grouping Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow mb-10">
+                <Card className="p-5">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Enrollment &amp; Grouping
                     </h2>
@@ -131,9 +132,9 @@ export default function StudentManagementPage() {
                             <li>Group C: History Buffs</li>
                         </ul>
                     </div>
-                </div>
+                </Card>
                 {/* Performance Alerts Section */}
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+                <Card className="p-5">
                     <h2 className="text-gray-700 dark:text-gray-200 text-lg font-semibold mb-4">
                         Performance Alerts
                     </h2>
@@ -146,13 +147,13 @@ export default function StudentManagementPage() {
                         </label>
                         <input
                             type="text"
-                            className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                            className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-neutral/30 dark:text-gray-200"
                             placeholder="Enter student name"
                         />
                         <label className="block mb-2 text-gray-600 dark:text-gray-300">
                             Alert Type:
                         </label>
-                        <select className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
+                        <select className="w-full p-2 mb-4 border border-gray-300 rounded dark:border-gray-600 dark:bg-neutral/30 dark:text-gray-200">
                             <option>Low Engagement</option>
                             <option>Low Performance</option>
                             <option>Attendance Issue</option>
@@ -164,7 +165,7 @@ export default function StudentManagementPage() {
                             Set Alert
                         </button>
                     </form>
-                </div>
+                </Card>
             </div>
         </DashboardLayout>
     );
