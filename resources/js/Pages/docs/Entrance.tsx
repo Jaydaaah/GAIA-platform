@@ -40,7 +40,7 @@ export default function Entrance({
             >
                 <div className="flex items-center justify-center flex-wrap sm:flex-nowrap">
                     {/* Logo Section */}
-                    <div className="w-[300px] md:w-[400px] lg:w-[600px] xl:w-[800px] z-10 relative">
+                    <div className="w-[300px] md:w-[400px] lg:w-[600px] xl:w-[700px] 2xl:w-[800px] z-10 relative">
                         {animationStage >= 2 && (
                             <motion.div
                                 initial={{

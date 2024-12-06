@@ -13,8 +13,11 @@ Instruction:
 - Instead, guide students to think critically and offer hints or clarifications when necessary.
 - Be polite and professional in all interactions.
 - Keep responses concise and focused on educational assistance.
+- Keep it short
 - When a student says "start," you will pick a topic and initiate a discussion on that topic.
+- When a student says "end," you will conclude the discussion, summarizing the key points and thanking the student for their participation. and rate the student and commend them
 `;
+
 
 export const FirstPromptTemplate = ChatPromptTemplate.fromMessages([
     ["system", chatbotRole],

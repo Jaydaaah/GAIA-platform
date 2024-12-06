@@ -17,12 +17,14 @@ export default function ChatInput({
     value,
     onChange,
     onSubmit,
+    disabled
 }: PropsWithChildren<{
     className?: string;
     processing?: boolean;
     value?: string;
     onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;
     onSubmit?: React.FormEventHandler<HTMLFormElement>;
+    disabled?: boolean;
 }>) {
     const formRef = useRef<HTMLFormElement>(null);
     const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -85,10 +87,11 @@ export default function ChatInput({
                         <textarea
                             id="chat"
                             ref={inputRef}
+                            disabled={disabled}
                             rows={1}
                             maxLength={1000}
                             className="overflow-hidden block mr-3 p-2.5 w-full text-md text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-neutral focus:border-neutral dark:bg-background dark:border-neutral dark:placeholder-text-primary dark:text-white"
-                            placeholder="Your message..."
+                            placeholder={!disabled ? "Your message..." : "Discussion ended"}
                             onChange={onChange}
                             onKeyDown={keyPressHandler}
                             onFocus={() => setHasFocus(true)}

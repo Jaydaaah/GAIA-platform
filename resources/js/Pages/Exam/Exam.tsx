@@ -17,6 +17,8 @@ import {
     useMemo,
     useState,
 } from "react";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import TypewriterComponent from "typewriter-effect";
 
 export default function Exam({
@@ -35,6 +37,7 @@ export default function Exam({
         you: string;
     };
 }>) {
+    const [temporaryEnd, setEnd] = useState(false);
     const [tempStreamDonetext, setTempStreamDonetext] = useState("");
     const { data, setData, post, reset, processing, errors } = useForm({
         prompt: "",
@@ -68,7 +71,7 @@ export default function Exam({
                 });
             }
         },
-        [data, onSuccess]
+        [data, onSuccess, post]
     );
 
     const renderMessages = useMemo(() => {
@@ -76,17 +79,31 @@ export default function Exam({
             const name = side == "right" ? "You" : "AI";
             const time = new Date(created_at);
 
-            return (
-                <ChatBubble
-                    key={`chat-bubble-${created_at}-${index}`}
-                    side={(side == "right" && "right") || "left"}
-                    src={side == "right" ? avatar.you : avatar.ai}
-                    name={name}
-                    time={time}
-                >
-                    {message}
-                </ChatBubble>
-            );
+            const messageLower = message.toLowerCase().trim();
+
+            if (name == "You" && messageLower == "end") {
+                setEnd(true);
+            }
+
+            if (name != "You" || messageLower != "start") {
+                return (
+                    <ChatBubble
+                        key={`chat-bubble-${created_at}-${index}`}
+                        side={(side == "right" && "right") || "left"}
+                        src={side == "right" ? avatar.you : avatar.ai}
+                        name={name}
+                        time={time}
+                    >
+                        <Markdown
+                            remarkPlugins={[
+                                [remarkGfm, { singleTilde: false }],
+                            ]}
+                        >
+                            {message}
+                        </Markdown>
+                    </ChatBubble>
+                );
+            }
         });
     }, [chats]);
 
@@ -128,11 +145,10 @@ export default function Exam({
                 <div className="flex flex-col">
                     <span className="font-extralight text-secondary">
                         <LiveTime />
-                        <button className="ml-2 class-name text-sm underline hover:opacity-50 active:opacity-80">
-                            End
-                        </button>
                     </span>
-                    <span className="text-sm">End button is temporary</span>
+                    <span className="text-sm">
+                        temporary function: type "End" to end the chat
+                    </span>
                 </div>
             }
         >
@@ -149,6 +165,7 @@ export default function Exam({
                     <div className="flex-grow w-full max-w-4xl space-y-6 sm:px-6 lg:px-8 flex flex-col-reverse">
                         <ChatInput
                             value={data.prompt}
+                            disabled={temporaryEnd}
                             processing={processing}
                             onSubmit={onSubmit}
                             onChange={({ target }) => {

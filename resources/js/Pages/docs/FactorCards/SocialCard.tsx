@@ -11,7 +11,7 @@ export default function SocialCard() {
                 </h1>
                 <div className="h-64 w-full">
                     <div className="flex justify-center mb-2">
-                        <img src="https://drive.google.com/thumbnail?id=1O6-iK1cW8nTIstNKfjwG-UxK52HfikLJ"></img>
+                        <img src="https://drive.google.com/thumbnail?id=1c4hTJE7sFmXs4PWRiJmPTRoKD3q46BSx"></img>
                     </div>
                     <h2 className="text-xl mb-6 text-center">
                         Social factors, like parental expectations, heighten
