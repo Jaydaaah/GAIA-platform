@@ -23,11 +23,11 @@ export default function DocsPage6() {
 }
 
 const paragraphs = [
-    "To create assessment modules that allow students to engage in dynamic dialogues with the AI, where they can explore questions, receive supportive hints, and delve deeper into concepts, thereby transforming assessments into a collaborative and less intimidating experience.",
-    "To create low-stakes assessments that simulate real exam conditions but are designed to be supportive and informative, allowing students to build confidence without the pressure of grading.",
-    "To design dashboards that summarize student performance data, highlighting trends and areas for improvement, thus allowing educators to make informed decisions without sifting through individual submissions.",
-    "To use LLMs to generate tailored feedback reports that summarize a student’s strengths and weaknesses, offering targeted resources for improvement specific to their work.",
-    "To create comprehensive guidelines that outline best practices for educators to incorporate GAIA into their lesson plans and assessment strategies.",
-    "To provide prompts that encourage students to express their thoughts, such as “What are your views on [topic] and why?” This invites more personal engagement.",
-    "To provide positive feedback on students' efforts, like GAIA complementing the students' answers on the exam, it reinforces the belief that hard work leads to success. This motivation encourages them to take on new challenges, as they feel more capable and supported.",
+    "To create assessment modules for dynamic AI-student dialogues to make learning collaborative and less intimidating.",
+    "To develop low-stakes, exam-like assessments to build student confidence in a supportive way.",
+    "To design dashboards that summarize student performance for educators, highlighting trends and improvement areas.",
+    "To use LLMs to generate feedback reports summarizing strengths, weaknesses, and targeted improvement resources.",
+    "To create guidelines to help educators integrate GAIA into lesson plans and assessments effectively.",
+    "To provide prompts that encourage personal student engagement and expression, such as open-ended questions.",
+    "To offer positive feedback to reinforce effort and motivate students to tackle challenges confidently."
 ];
